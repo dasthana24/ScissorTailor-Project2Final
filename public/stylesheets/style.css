@@ -1,0 +1,354 @@
+.bg{
+  background-image: url("https://i.imgur.com/qLUHum0.jpg");
+  background-repeat:no-repeat center center fixed;
+  margin:0;
+  padding:0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* body{
+    background-color: rgb(150, 168, 85)
+} */
+.thumbnail img {
+
+  max-height: 300px;
+
+}
+.thumbnail{
+    background-color: rgb(233, 168, 130);
+}
+
+
+/* .thumbnail .description {
+
+
+
+} */
+
+nav{
+
+  background-color: rgb(68, 67, 67);
+  
+}
+ a{
+  color: orangered;
+    font-size: 22px;
+}
+.navbar-brand{
+    color: rgb(231, 105, 59);
+    font-size: 38px;
+}
+
+.price {
+
+  font-weight: bold;
+
+  font-size: 16px;
+
+} 
+
+/* 
+.w3-container{
+    background-color:  rgb(206, 166, 152);
+} */
+
+/* 
+sidenav */
+
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+      transition: 0.5s;
+    padding-top: 60px;
+}
+
+
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+      padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+       transition: 0.3s;
+}
+
+
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+   
+    color: green;
+
+}
+
+/* Main content */
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: white;
+    color: green;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color:red;
+}
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* 
+slide-show */
+carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 560px;
+      margin: auto;
+  }
+
+/* //selfie */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: #fff;
+    font:normal 16px/1.5 sans-serif;
+    color: #333;
+}
+
+h3{
+    font: normal 32px/1.5 'Open Sans', sans-serif;
+    color: #2c3e50;
+    margin: 50px 0;
+    text-align: center;
+}
+
+
+/* .container{
+    
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #efefef;
+} */
+
+.app{
+    width: 100%;
+    position: relative;
+}
+
+.app #start-camera{
+    display: block;
+    border-radius: 1px;
+    max-width: 400px;
+    color: #fff;
+    background-color: rgb(63, 60, 58);
+    text-decoration: none;
+     /* padding: 5px;
+    opacity: 0.8; */
+    margin: 2px auto; 
+    text-align: center;
+}
+
+
+
+.app video#camera-stream{
+    display: none;
+    width: 100%;
+}
+
+.app img#snap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
+
+.app #error-message{
+    width: 100%;
+    background-color: #ccc;
+    color: #9b9b9b;
+    font-size: 28px;
+    padding: 200px 100px;
+    text-align: center;
+    display: none;
+}
+
+.app .controls{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    /* padding: 10px; */
+    display: none;
+}
+
+.app .controls a{
+    border-radius: 50%;
+    color: #fff;
+    background-color: #111;
+    text-decoration: none;
+    padding: 15px;
+    line-height: 0;
+    opacity: 0.7;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.app .controls a:hover{
+    opacity: 1;
+}
+
+.app .controls a.disabled{
+    background-color: #555;
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+.app .controls a.disabled:hover{
+    opacity: 0.5;
+}
+
+.app .controls a i{
+    font-size: 18px;
+}
+
+.app .controls #take-photo i{
+    font-size: 18px;
+}
+
+.app canvas{
+    display: none;
+}
+
+
+
+.app video#camera-stream.visible,
+.app img#snap.visible,
+.app #error-message.visible
+{
+    display: block;
+}
+
+.app .controls.visible{
+    display: flex;
+}
+
+
+
+@media(max-width: 1000px){
+    .container{
+        margin: 40px;
+        
+    }
+
+    .app #start-camera.visible{
+        display: block;
+    }
+
+    .app .controls a i{
+        font-size: 16px;
+    }
+
+    .app .controls #take-photo i{
+        font-size: 24px;
+    }
+}
+
+
+@media(max-width: 600px){
+    .container{
+        margin: 10px;
+    }
+
+    .app #error-message{
+        padding: 80px 50px;
+        font-size: 18px;
+    }
+
+    .app .controls a i{
+        font-size: 12px;
+    }
+
+    .app .controls #take-photo i{
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+
+#footer{
+    background-color: rgb(233, 168, 130);
+    font-size: 18px;
+}
+
+
+.checkout {
+    background-color: rgb(233, 168, 130);
+}
+.list-group-item{
+    background-color: rgb(233, 168, 130);
+}
+
+.btn{
+    background-color: darkgreen;
+}

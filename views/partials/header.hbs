@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">ScissorTailor</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+ <div class="collapse navbar-collapse w3-display-right" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/home/shop">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/shopping-cart/">
+
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                    <span class="badge">{{session.cart.totalQty}}</span>
+
+                </a>
+
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    User Login
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {{# if login }}
+                    <a class="dropdown-item" href="/user/profile">User Profile</a>
+                    <a class="dropdown-item" href="/user/logout">Logout</a>
+                    {{ else }}
+                    <a class="dropdown-item" href="/user/signup">SignUp</a>
+                    <a class="dropdown-item" href="/user/signin">SignIn</a>
+                    {{/if}}
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+</nav>
