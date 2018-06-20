@@ -37,7 +37,13 @@ var app = express();
 
 
 //mongoose.connect('192.168.56.108:27017/shopping');
-mongoose.connect('mongodb://mynewuser:myuser123@localhost:27017/shopping');
+var databaseUri = mongoose.connect('mongodb://mynewuser:myuser123@localhost:27017/shopping');
+if (process.env.MONGODB_URI)
+{
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+  mongoose.connect(databaseUri);
+}
 
 require('./config/passport');
 
@@ -45,7 +51,10 @@ require('./config/passport');
 
 // view engine setup
 
-app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
+app.engine('.hbs', expressHbs({
+  defaultLayout: 'layout',
+  extname: '.hbs'
+}));
 
 app.set('view engine', '.hbs');
 
@@ -59,7 +68,9 @@ app.use(logger('dev'));
 
 app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 app.use(validator());
 
@@ -67,15 +78,19 @@ app.use(cookieParser());
 
 app.use(session({
 
-  secret: 'mysupersecret', 
+  secret: 'mysupersecret',
 
-  resave: false, 
+  resave: false,
 
   saveUninitialized: false,
 
-  store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection
+  }),
 
-  cookie: { maxAge: 180 * 60 * 1000 }
+  cookie: {
+    maxAge: 180 * 60 * 1000
+  }
 
 }));
 
@@ -89,13 +104,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
 
-    res.locals.login = req.isAuthenticated();
+  res.locals.login = req.isAuthenticated();
 
-    res.locals.session = req.session;
+  res.locals.session = req.session;
 
-    next();
+  next();
 
 });
 
@@ -111,7 +126,7 @@ app.use('/', routes);
 
 // catch 404 and forward to error handler
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
 
   var err = new Error('Not Found');
 
@@ -133,7 +148,7 @@ app.use(function(req, res, next) {
 
 if (app.get('env') === 'development') {
 
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
 
     res.status(err.status || 500);
 
@@ -155,7 +170,7 @@ if (app.get('env') === 'development') {
 
 // no stacktraces leaked to user
 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
 
   res.status(err.status || 500);
 
