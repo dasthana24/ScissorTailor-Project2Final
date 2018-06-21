@@ -37,7 +37,8 @@ var app = express();
 
 
 //mongoose.connect('192.168.56.108:27017/shopping');
-var databaseUri = mongoose.connect('mongodb://mynewuser:myuser123@localhost:27017/shopping');
+var databaseUri = mongoose.connect('mongodb://mynewuser:myuser1234@ds263520.mlab.com:63520/heroku_820grfdl');
+
 if (process.env.MONGODB_URI)
 {
   mongoose.connect(process.env.MONGODB_URI);

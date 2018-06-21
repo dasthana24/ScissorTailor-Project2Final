@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 
 
 
-mongoose.connect('mongodb://mynewuser:myuser123@localhost:27017/shopping');
+mongoose.connect('mongodb://mynewuser:myuser1234@ds263520.mlab.com:63520/heroku_820grfdl');
 
 
 

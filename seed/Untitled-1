@@ -1,0 +1,10 @@
+mongodb://heroku_820grfdl:2qsno49l6dh3g13vf1n8iqb7h2@ds263520.mlab.com:63520/heroku_820grfdl
+
+use heroku_820grfdl
+db.createUser( { user: "heroku_820grfdl",
+                 pwd: "2qsno49l6dh3g13vf1n8iqb7h2",
+                 customData: { employeeId: 12345 },
+                 roles: [ { role: "clusterAdmin", db: "admin" },
+                          { role: "readAnyDatabase", db: "admin" },
+                          "readWrite"] },
+               { w: "majority" , wtimeout: 5000 } )
